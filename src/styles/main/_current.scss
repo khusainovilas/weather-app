@@ -1,0 +1,173 @@
+@import "../variables";
+@import "../mixin";
+@import "../animation";
+
+.main__card-current {
+  grid-column: 1;
+  grid-row: 1;
+  background: var(--current-block-color);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  @include box-shadow-card;
+
+  .current__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .current__header-text {
+      display: flex;
+      flex-direction: row;
+      gap: 7px;
+      .lucide-map-pin {
+        color: $blue-neon;
+        position: relative;
+        top: 2px;
+      }
+      .current__header-location {
+        font-weight: 400;
+        font-size: 18px;
+        color: var(--color-icon);
+      }
+    }
+    .current__header-wrap {
+      transition: transform 0.6s ease;
+      .current__header-image {
+        filter: var(--color-icon-filter);
+      }
+      .current__header-image.animation {
+        @include spin();
+      }
+    }
+    .current__header-wrap:hover {
+      transform: scale(1.4);
+      transition-delay: 0.2s;
+    }
+
+  }
+
+  .current__body {
+    height: 230px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    .current__body-text {
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      flex-direction: column;
+      .current__body-temp {
+        text-align: center;
+        font-weight: 400;
+        font-size: 64px;
+        color: #7B68EE;
+        @include pulse(3s, 1.05);
+      }
+      .current__body-condition {
+        text-align: center;
+        color: var(--color-text);
+        font-weight: 400;
+        font-size: 20px;
+      }
+      .current__body-feel {
+        text-align: center;
+        color: var(--color-text);
+        font-weight: 400;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .current__info {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    .current__info-humidity {
+      @include current-info;
+      .humidity-logo {
+        @include current-info-icon;
+      }
+      .humidity-logo:hover {
+        transform: rotate(360deg);
+        transition-delay: 0.2s;
+      }
+      .humidity__block {
+        @include current-info-block;
+        .humidity__text {
+          color: var(--color-text);
+          font-size: 11px;
+        }
+      }
+    }
+    .current__info-humidity:hover {
+      transform: scale(1.04);
+      transition-delay: 0.2s;
+    }
+    .current__info-wind {
+      @include current-info;
+      .wind-logo {
+        @include current-info-icon;
+      }
+      .wind-logo:hover {
+        transform: rotate(360deg);
+        transition-delay: 0.2s;
+      }
+      .windy__block {
+        @include current-info-block;
+        .wind__text {
+          color: var(--color-text);
+          font-size: 11px;
+        }
+      }
+    }
+    .current__info-wind:hover {
+      transform: scale(1.04);
+      transition-delay: 0.2s;
+    }
+    .current__info-pressure {
+      @include current-info;
+      .pressure-logo {
+        @include current-info-icon;
+      }
+      .pressure-logo:hover {
+        transform: rotate(360deg);
+        transition-delay: 0.2s;
+      }
+      .pressure__block {
+        @include current-info-block;
+        .pressure__text {
+          color: var(--color-text);
+          font-size: 11px;
+        }
+      }
+    }
+    .current__info-pressure:hover {
+      transform: scale(1.04);
+      transition-delay: 0.2s;
+    }
+    .current__info-visibility {
+      @include current-info;
+      .visibility-logo {
+        @include current-info-icon;
+      }
+      .visibility-logo:hover {
+        transform: rotate(360deg);
+        transition-delay: 0.2s;
+      }
+      .visibility__block {
+        @include current-info-block;
+        .visibility__text {
+          color: var(--color-text);
+          font-size: 11px;
+        }
+      }
+    }
+    .current__info-visibility:hover {
+      transform: scale(1.04);
+      transition-delay: 0.2s;
+    }
+  }
+}

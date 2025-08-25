@@ -1,0 +1,74 @@
+$body-background-color: #fbfcfe;
+$body-background-color-dark: #162447;
+$secondary-block-background-color: #e6f0ff;
+$secondary-block-background-color-dark: #0a192f;
+$hover-effect-light: #e6f0ff;
+$main-block-background-color: #FFFFFF;
+//$current-info-block-color: #f5f9ff;
+
+$blue-neon: #458CEB;
+$gray: #6e6e6e;
+$dark-gray: #4d4d4d;
+$light-gray: #a0a5b0;
+
+:root {
+  --body-background-color: #fbfcfe;
+  --secondary-block-background-color: #e6f0ff;
+  --color-icon: #000000;
+  --color-text: #{$gray};
+  --color-icon-filter: none;
+
+  --hover-effect-light: #e6f0ff;
+  --hover-effect: #e6f0ff;
+
+  --main-block-background-color: linear-gradient(130deg,rgba(245, 249, 253, 1) 0%, rgba(244, 248, 252, 1) 30%, rgba(243, 247, 253, 1) 60%, rgba(241, 245, 254, 1) 80%, rgba(241, 245, 255, 1) 100%);;
+
+  --current-info-block-color: #F2F4FE;
+  --current-block-color: linear-gradient(130deg,rgba(238, 244, 255, 1) 0%, rgba(235, 241, 255, 1) 50%, rgba(229, 236, 255, 1) 100%);
+  --current-icon-block-color: #DBEBFE;
+
+  --suggesting-background: white;
+  --suggesting-second-color: #D4D4D4;
+
+  --error-gray: #333333;
+  --error-light-gray: #1E2939;
+
+  --error-icon-color: #FFFFFF;
+  --error-try-color: #FAFBFF;
+  --error-try-hover-color: #FFFFFF;
+
+  --connection-icon-color: #FFFFFF;
+  --connection-try-color: #FAFBFF;
+  --connection-try-hover-color: #FFFFFF;
+  --connection-background-color: #FDEEF2;
+}
+
+body.dark {
+  --color-icon-filter: invert(1);
+  --body-background-color: #162447;
+  --secondary-block-background-color: #0a192f;
+  --main-block-background-color: #0B1127;
+  --hover-effect: #101D3C;
+  --color-icon: #FFFFFF;
+  --color-text: #{$light-gray};
+
+  --current-info-block-color: linear-gradient(135deg, #162447, #1b214f);
+  --current-block-color: linear-gradient(130deg,rgba(23, 36, 87, 1) 0%, rgba(37, 41, 112, 1) 50%, rgba(48, 44, 131, 1) 100%);
+  --current-icon-block-color: #1C398E;
+
+  --suggesting-background: #0B1127;
+  --suggesting-second-color: #5C5C5C;
+
+  --error-gray: #99A1AF;
+  --error-light-gray: #E5E7EB;
+
+  --error-icon-color: #141E48;
+  --error-try-color: #191947;
+  --error-try-hover-color: #0B1127;
+
+  --connection-icon-color: #3C070A;
+  --connection-try-color: #44091E;
+  --connection-try-hover-color: #44081D;
+  --connection-background-color: linear-gradient(130deg,rgba(76, 9, 15, 1) 0%, rgba(125, 15, 59, 1) 100%);;
+}
+

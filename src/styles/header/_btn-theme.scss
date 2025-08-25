@@ -1,0 +1,53 @@
+@import "../variables";
+
+.header__controls-theme {
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--hover-effect);
+  }
+
+  .controls-theme {
+    position: relative;
+
+    svg {
+      position: absolute;
+      top: -9px;
+      left: -9px;
+      opacity: 0;
+      transform: rotate(0deg) scale(1);
+      transition: opacity 0.3s ease, transform 0.5s ease;
+    }
+
+    &.light {
+      .lucide-sun {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+      }
+      .lucide-moon {
+        opacity: 0;
+        transform: rotate(90deg) scale(0.1);
+      }
+    }
+
+    &.dark {
+      .lucide-sun {
+        opacity: 0;
+        transform: rotate(-90deg) scale(0.1);
+      }
+      .lucide-moon {
+        opacity: 1;
+        transform: rotate(0deg) scale(1);
+      }
+    }
+  }
+}

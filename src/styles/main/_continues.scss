@@ -1,0 +1,27 @@
+@import "../mixin";
+
+.main__card-continues {
+  background-color: var(--main-block-background-color);
+  grid-column: 1;
+  grid-row: 2;
+  padding: 15px;
+  border-radius: 10px;
+  @include box-shadow-card;
+
+  .continues-title {
+    font-size: 16px;
+    font-weight: 400;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    color: var(--color-icon);
+  }
+  .continues_block {
+    display: flex;
+    justify-content: center;
+
+    .continues-graph {
+
+    }
+  }
+
+}

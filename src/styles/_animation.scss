@@ -1,0 +1,29 @@
+@mixin pulse($duration: 1.5s, $scale: 1.1) {
+  @keyframes pulse {
+    0%   { transform: scale(1); }
+    50%  { transform: scale($scale); }
+    100% { transform: scale(1); }
+  }
+
+  animation: pulse $duration ease-in-out infinite;
+}
+
+@mixin spin($duration-spin: 6s) {
+  @keyframes spin {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  animation: spin $duration-spin infinite linear;
+}
+
+@mixin rotate($duration-spin: 1s) {
+  @keyframes rotate {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  animation: rotate $duration-spin linear;
+}
+
+

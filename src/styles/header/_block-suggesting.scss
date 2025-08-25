@@ -1,0 +1,98 @@
+@import "../variables";
+@import "../mixin";
+
+.header__search-block-suggesting {
+  position: absolute;
+  z-index: 100;
+  background-color: var(--suggesting-background);
+  @include box-shadow-card;
+  backdrop-filter: blur(30px);
+  top: 110%;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  gap: 5px;
+  max-width: 540px;
+  border-radius: 10px;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-5px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 1s;
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .suggest__city {
+    background-color: var(--suggesting-background);
+    backdrop-filter: blur(30px);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding: 8px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    .suggest__block-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background-color: var(--suggesting-second-color);
+      height: 30px;
+      width: 30px;
+      transition: transform 0.5s ease, background-color 0.3s ease;
+      .icon-suggest {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--color-text);
+      }
+    }
+    .suggest__block-icon:hover {
+      transition-delay: 0.1s;
+      transform: scale(1.1);
+    }
+    .suggest__block-main {
+      .suggest__block-first {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 20px;
+        gap: 10px;
+        .suggest__block-first-city {
+          font-size: 14px;
+          color: var(--color-icon);
+        }
+        .suggest__block-first-wrap {
+          background-color: var(--suggesting-second-color);
+          border-radius: 20px;
+          padding: 2px;
+          width: 43px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .suggest__block-first-conditional {
+            font-size: 11px;
+            color: var(--color-text);
+          }
+        }
+
+      }
+      .suggest__block-second {
+        .suggest__block-second-text {
+          font-size: 12px;
+          color: var(--color-text);
+        }
+      }
+    }
+  }
+  .suggest__city:hover {
+    transition-delay: 0.3s;
+    transform: scale(1.01);
+    background-color: var(--hover-effect);
+  }
+}

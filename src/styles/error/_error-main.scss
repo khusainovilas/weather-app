@@ -1,0 +1,115 @@
+@import "../variables";
+@import "../mixin";
+
+.block__error-message.show {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  .block__error-message-content {
+    max-width: 1100px;
+    width: 100%;
+    background: var(--current-block-color);
+    border-radius: 10px;
+    padding: 40px 50px 50px;
+    @include box-shadow-card;
+  }
+
+  .error-message__header {
+    height: 100px;
+    padding: 10px;
+    .error-message__header-icon {
+      border-radius: 50%;
+      height: 55px;
+      width: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--error-icon-color);
+    }
+    .lucide-map-pin-off {
+      color: $blue-neon;
+    }
+  }
+  .error-message__main {
+    color: var(--error-gray);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    .error-message__main-text {
+      text-align: center;
+      font-size: 18px;
+      font-weight: 400;
+      padding-bottom: 30px;
+      color: var(--error-light-gray);
+    }
+    .error-message__main-container-reason {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      text-align: center;
+      padding: 20px 0 50px;
+      .error-message__main-reason {
+        max-width: 480px;
+        font-size: 16px;
+      }
+    }
+    .error-message__main-list {
+      text-align: center;
+      font-size: 14px;
+      font-weight: 400;
+    }
+    .error-message__main-container-list {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      .error-list {
+        font-size: 14px;
+        list-style: disc inside;
+        padding: 0;
+        margin: 10px 0 0 0;
+        text-align: center;
+      }
+    }
+    .error-message__main-container-btn {
+      display: flex;
+      justify-content: center;
+      padding-top: 30px;
+      transition: background-color 0.2s ease-in-out;
+      .error-message__main-tryBtn {
+        @include box-shadow-card;
+        width: 180px;
+        border: none;
+        background-color: var(--error-try-color);
+        border-radius: 8px;
+        padding: 7px;
+        .error-message__main-tryBtn-block {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+
+          .lucide-refresh-cw {
+            filter: var(--color-icon-filter);
+          }
+
+          .error-message__main-tryBtn-text {
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--color-icon);
+          }
+        }
+      }
+      .error-message__main-tryBtn:hover {
+        background-color: var(--error-try-hover-color);
+        transition-delay: 0.2s;
+      }
+    }
+  }
+}
+
+.block__error-message {
+  display: none;
+}

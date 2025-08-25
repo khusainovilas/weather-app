@@ -1,0 +1,9 @@
+@import "variables";
+@import "fonts";
+
+body {
+  background-color: var(--body-background-color);
+  font-family: 'Roboto', 'Poppins-regural', 'Roboto-regural', Arial, sans-serif;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+

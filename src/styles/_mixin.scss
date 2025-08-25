@@ -1,0 +1,39 @@
+@import "variables";
+
+@mixin box-shadow-card {
+  -webkit-box-shadow: 0 10px 15px 5px rgba(34, 60, 80, 0.15);
+  -moz-box-shadow: 0 10px 15px 5px rgba(34, 60, 80, 0.15);
+  box-shadow: 0 10px 15px 5px rgba(34, 60, 80, 0.15);
+}
+
+@mixin current-info {
+  background: var(--current-info-block-color);
+  box-shadow: 0 0 85px 5px rgba(34, 60, 80, 0.15);
+  border-radius: 10px;
+  padding: 7px 7px 7px 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.3s ease;
+  color: var(--color-icon);
+}
+
+@mixin current-info-block {
+  font-weight: 400;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin current-info-icon {
+  color: $blue-neon;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 30px;
+  background-color: var(--current-icon-block-color);
+  border-radius: 50%;
+  transition: transform 1s ease-in-out;
+}

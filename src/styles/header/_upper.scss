@@ -1,0 +1,62 @@
+@import "../variables";
+@import "../animation";
+
+.header__upper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  .header__title {
+    .header__title-text {
+      background: linear-gradient(
+                      90deg,
+                      #3a7bd5 0%,
+                      #6a5acd 40%,
+                      #8a2be2 60%,
+                      #3a7bd5 100%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-size: 24px;
+      font-weight: 400;
+    }
+
+    .header__title-date {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--color-text);
+    }
+  }
+
+  .header__controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    svg {
+      color: var(--color-icon);
+    }
+
+    .header__controls-update {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 30px;
+      width: 30px;
+      padding: 0;
+      border-radius: 50%;
+      border: none;
+      background-color: transparent;
+      transition: transform 1s, background-color 0.1s;
+    }
+    .header__controls-update:hover{
+      background-color: var(--hover-effect);
+    }
+    .header__controls-update:active{
+      @include rotate();
+    }
+  }
+}
+
+
