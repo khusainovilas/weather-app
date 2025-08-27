@@ -259,7 +259,7 @@ export async function loadData(city) {
         mainCards.forEach((card, index) => {
             setTimeout(() => {
                 card.classList.add("show");
-            }, index * 300); // задержка 300ms между карточками
+            }, index * 300);
         });
     });
 }

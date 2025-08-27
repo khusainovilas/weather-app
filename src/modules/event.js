@@ -21,11 +21,25 @@ export function initNavigation() {
 export function initUpdateBtn() {
     const updateBtn = document.querySelector('.header__controls-update');
     const updateBtnError = document.querySelector('.error-message__main-tryBtn');
+    const updateBtnConnection = document.querySelector('.connection-message__main-tryBtn');
 
     updateBtn.addEventListener('click', async () => {
-        await loadData(region);
+        if (updateBtn.disabled) return;
+        updateBtn.disabled = true;
+        updateBtn.classList.add('spin');
+
+        await loadData(region)
+
+        updateBtn.addEventListener('animationend', async () => {
+            updateBtn.disabled = false;
+            updateBtn.classList.remove('spin');
+        }, { once: true })
+
     })
     updateBtnError.addEventListener('click', async () => {
+        await loadData(region);
+    })
+    updateBtnConnection.addEventListener('click', async () => {
         await loadData(region);
     })
 }

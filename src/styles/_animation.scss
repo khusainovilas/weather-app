@@ -23,7 +23,32 @@
     100% { transform: rotate(360deg); }
   }
 
-  animation: rotate $duration-spin linear;
+  animation: rotate $duration-spin ease-in-out;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@mixin fadeInUp($delay: 0s) {
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: $delay;
 }
 
 
+@mixin fadeInUpCard(){
+  @keyframes fadeInUpCard {
+    from {
+      opacity: 0;
+      transform: translate(0, 30px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+  }
+  animation: fadeInUpCard 1s ease forwards;
+}

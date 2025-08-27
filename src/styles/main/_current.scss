@@ -2,6 +2,17 @@
 @import "../mixin";
 @import "../animation";
 
+@keyframes fadeInUpImg {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .main__card-current {
   grid-column: 1;
   grid-row: 1;
@@ -11,6 +22,7 @@
   flex-direction: column;
   padding: 30px;
   @include box-shadow-card;
+  @include fadeInUpCard;
 
   .current__header {
     display: flex;
@@ -21,6 +33,9 @@
       display: flex;
       flex-direction: row;
       gap: 7px;
+      opacity: 0;
+      transform: translate(-5px, 0);
+      @include fadeInUp(0.2s);
       .lucide-map-pin {
         color: $blue-neon;
         position: relative;
@@ -35,6 +50,7 @@
     .current__header-wrap {
       transition: transform 0.6s ease;
       .current__header-image {
+        animation: fadeInUpImg 0.5s cubic-bezier(0.25,0.46,0.45,0.94) forwards;
         filter: var(--color-icon-filter);
       }
       .current__header-image.animation {
@@ -49,6 +65,8 @@
   }
 
   .current__body {
+    opacity: 0;
+    @include fadeInUp(0.2s);
     height: 230px;
     display: flex;
     align-content: center;
@@ -86,6 +104,9 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
     .current__info-humidity {
+      opacity: 0;
+      transform: translate(-25px, 10px);
+      @include fadeInUp(0s);
       @include current-info;
       .humidity-logo {
         @include current-info-icon;
@@ -107,6 +128,9 @@
       transition-delay: 0.2s;
     }
     .current__info-wind {
+      opacity: 0;
+      transform: translate(-25px, 10px);
+      @include fadeInUp(0.1s);
       @include current-info;
       .wind-logo {
         @include current-info-icon;
@@ -128,6 +152,9 @@
       transition-delay: 0.2s;
     }
     .current__info-pressure {
+      opacity: 0;
+      transform: translate(-25px, 10px);
+      @include fadeInUp(0.2s);
       @include current-info;
       .pressure-logo {
         @include current-info-icon;
@@ -149,6 +176,9 @@
       transition-delay: 0.2s;
     }
     .current__info-visibility {
+      opacity: 0;
+      transform: translate(-25px, 10px);
+      @include fadeInUp(0.3s);
       @include current-info;
       .visibility-logo {
         @include current-info-icon;

@@ -1,4 +1,5 @@
 import axios from "axios";
+import {connectionError} from "./error.js";
 
 const API_KEY = import.meta.env.VITE_KEY_API;
 
@@ -8,7 +9,7 @@ export async function currentFetchData(city) {
         const res = await axios.get(url);
         return res.data;
     } catch (e) {
-        console.error(e);
+        connectionError();
         return null;
     }
 }
@@ -19,7 +20,7 @@ export async function forecastFetchData(city, days = 5) {
         const res = await axios.get(url);
         return res.data;
     } catch (e) {
-        console.error(e);
+        connectionError();
         return null;
     }
 }

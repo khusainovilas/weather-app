@@ -50,11 +50,17 @@
       background-color: transparent;
       transition: transform 1s, background-color 0.1s;
     }
-    .header__controls-update:hover{
+    .header__controls-update:hover {
       background-color: var(--hover-effect);
     }
-    .header__controls-update:active{
-      @include rotate();
+    .header__controls-update.spin {
+      @include rotate(1.5s);
+      svg {
+        color: $light-gray;
+      }
+    }
+    .header__controls-update.spin:hover {
+      background-color: transparent;
     }
   }
 }

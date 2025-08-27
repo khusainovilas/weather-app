@@ -1,4 +1,5 @@
 @import "../variables";
+@import "../animation";
 @import "../mixin";
 
 .main__card-future {
@@ -10,6 +11,9 @@
   @include box-shadow-card;
   height: fit-content;
 
+  @include fadeInUpCard();
+
+
   .future-title {
     font-weight: 400;
     font-size: 18px;
@@ -17,6 +21,10 @@
     padding-top: 10px;
     padding-left: 10px;
     color: var(--color-icon);
+    opacity: 0;
+    transform: translate(-20px, 5px);
+    transition: transform 1s ease, opacity 1s ease;
+    @include fadeInUp;
   }
 
   .future__list {
@@ -31,6 +39,9 @@
       gap: 10px;
       border-radius: 10px;
       padding: 10px;
+      opacity: 0;
+      transform: translate(-25px, -10px);
+      @include fadeInUp;
       transition: transform 0.3s ease, background-color 0.3s ease;
 
       .futureday-image {
@@ -105,6 +116,11 @@
       }
       .futureday-block2:hover {
         transform: scale(1.1);
+      }
+    }
+    @for $i from 1 through 5 {
+      .futureday:nth-child(#{$i}) {
+        animation-delay: 0.1s + 0.2s * ($i - 1);
       }
     }
 
