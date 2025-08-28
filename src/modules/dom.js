@@ -6,6 +6,14 @@ import {connectionError} from "./error.js";
 Chart.register(LineController, LineElement, PointElement, LinearScale, CategoryScale, Title);
 let myChart;
 
+function getIconPath(iconName) {
+    if (window.location.hostname.includes('github.io')) {
+        return `/weather-app/src/assets/icons/${iconName}`;
+    } else {
+        return `./src/assets/icons/${iconName}`;
+    }
+}
+
 export async function loadData(city) {
 
     const mainContent = document.querySelector('.main__content');
@@ -36,7 +44,7 @@ export async function loadData(city) {
     const headerImage = document.querySelector(".current__header-image");
     headerImage.height = 72;
     headerImage.width = 72;
-    headerImage.src = "./src/assets/icons/" + getIconById(data["weather"][0]["icon"]);
+    headerImage.src = getIconPath(getIconById(data["weather"][0]["icon"]));
     if (data["weather"][0]["icon"] === "01d") {
         headerImage.classList.add("animation");
     }
@@ -82,7 +90,7 @@ export async function loadData(city) {
         futureday.className = "futureday";
         const imagefutureday = document.createElement("img");
         imagefutureday.className = "futureday-image";
-        imagefutureday.src = "./src/assets/icons/" + data_dailyaverage[i]["averageImage"];
+        imagefutureday.src = getIconPath(data_dailyaverage[i]["averageImage"]);
         imagefutureday.height = 48;
         imagefutureday.width = 48;
         const firstblockfutureday = document.createElement("div");
