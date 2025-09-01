@@ -1,8 +1,9 @@
 
 # ⛅ Weather App
 
-A modern Weather App built with JavaScript and Vite that fetches real-time weather data from the OpenWeatherMap API.
-Users can search for any city and instantly see current conditions with a clean, responsive, and interactive UI.
+[![Open in Browser](https://img.shields.io/badge/Open-Live_Site-blue?logo=google-chrome)](https://khusainovilas.github.io/weather-app/)
+
+Project: A simple and clean weather application that shows current conditions and forecast for any city. Get real-time weather data instantly.
 
 ---
 
@@ -25,9 +26,8 @@ Users can search for any city and instantly see current conditions with a clean,
 - JavaScript (ES6+) — core logic
 - HTML5 — semantic structure
 - Sass (SCSS) — styling with variables & nesting
-- OpenWeatherMap API — weather data source
+- [OpenWeatherMap API](https://openweathermap.org/api) — weather data source
 - Chart.js — interactive charts for hourly temperatures
-- Animated weather icons library (e.g., Weather Icons or similar)
 
 ---
 
@@ -42,28 +42,6 @@ Users can search for any city and instantly see current conditions with a clean,
     - 📊 Hourly temperature chart (visualized with Chart.js)
 5. User can switch between light/dark themes.
 
----
-
-## 🖥️ Installation & Usage
-```bash 
-# Clone the repository
-git clone https://github.com/username/weather-app.git
-
-# Go into the project folder
-cd weather-app
-
-# Install dependencies
-npm install
-
-# Start the development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Preview the production build
-npm run preview
-```
 ---
 ## 📸 Screenshots
 
